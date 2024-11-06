@@ -34,6 +34,11 @@ Supported algorithms
 https://learnopengl.com/
 https://en.cppreference.com/w/cpp/17
 
+## Previews
+![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/1.png)
+![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/2.png)
+![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/3.png)
+
 ## Dependencies
 - OpenGL
 - [GLFW (64 bit)](https://www.glfw.org/download.html)
