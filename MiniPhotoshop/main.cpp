@@ -14,7 +14,7 @@
 #include "Texture.h"
 
 #include <filesystem>
-#include "../libFiles/nfd.h"
+#include "nfd.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
@@ -33,25 +33,24 @@ void drawHistogram(const char* label, const std::array<int, 256>& values, int ma
     draw_list->AddRect(pos, ImVec2(pos.x + width, pos.y + height), IM_COL32(255, 255, 255, 255));
 
     if (maxValue == 0) {
-        maxValue = 1; // Ne legyen nulla maxValue
+        maxValue = 1;
+
+        for (int i = 0; i < 256; i++) {
+            float normalized = std::min(1.0f, values[i] / static_cast<float>(maxValue));
+            float x1 = pos.x + (width * i / 256.0f);
+            float x2 = pos.x + (width * (i + 1) / 256.0f);
+            float y1 = pos.y + height;
+            float y2 = pos.y + height - (normalized * height);
+
+            ImU32 col = ImGui::ColorConvertFloat4ToU32(color);
+            draw_list->AddRectFilled(ImVec2(x1, y1), ImVec2(x2, y2), col);
+        }
     }
-
-    for (int i = 0; i < 256; i++) {
-        float normalized = std::min(1.0f, values[i] / static_cast<float>(maxValue));
-        float x1 = pos.x + (width * i / 256.0f);
-        float x2 = pos.x + (width * (i + 1) / 256.0f);
-        float y1 = pos.y + height;
-        float y2 = pos.y + height - (normalized * height);
-
-        ImU32 col = ImGui::ColorConvertFloat4ToU32(color);
-        draw_list->AddRectFilled(ImVec2(x1, y1), ImVec2(x2, y2), col);
-    }
-
     ImGui::Dummy(ImVec2(width, height));
     ImGui::PopID();
 }
 
-void renderImageProcessingUI(Texture& modifiedTexture, Texture& originalTexture, GLFWwindow* window) {
+void renderImageProcessingUI(Texture & modifiedTexture, Texture & originalTexture, GLFWwindow * window) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();

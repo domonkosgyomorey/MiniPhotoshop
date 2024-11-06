@@ -4,8 +4,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "../libFiles/stb_image.h"
-#include "../libFiles/stb_image_write.h"
+#include "stb_image.h"
+#include "stb_image_write.h"
 #include <iostream>
 #include <array>
 
