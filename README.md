@@ -35,9 +35,9 @@ https://learnopengl.com/
 https://en.cppreference.com/w/cpp/17
 
 ## Previews
-![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/1.png)
-![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/2.png)
-![](https://github.com/domonkosgyomorey/MiniPhotoshop/tree/master/MiniPhotoshop/preview/3.png)
+![Image1](./MiniPhotoshop/preview/1.png)
+![Image1](./MiniPhotoshop/preview/2.png)
+![Image1](./MiniPhotoshop/preview/3.png)
 
 ## Dependencies
 - OpenGL
